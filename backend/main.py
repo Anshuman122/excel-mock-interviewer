@@ -6,14 +6,22 @@ import google.generativeai as genai
 from pydantic import BaseModel
 from .session_manager import start_session, record_answer
 from dotenv import load_dotenv
-import os
+
 from fastapi import FastAPI, UploadFile, File, Form
 from .generate_report import generate_report
-
-
-
+from fastapi.middleware.cors import CORSMiddleware
 import os
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # your React app
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
 
 # Load API key
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
