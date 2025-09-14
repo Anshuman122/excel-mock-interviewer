@@ -1,15 +1,50 @@
+# Python cache & virtualenv
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-env/
-venv/
-.env
+*.pkl
+*.db
+*.sqlite3
+*.log
 
-# IDE / editor
+# Virtual environment folders
+venv/
+env/
+.venv/
+ENV/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific
 .vscode/
 .idea/
 
-# OS files
-.DS_Store
-Thumbs.db
+# Environment & secrets
+.env
+*.env
+.env.local
+
+# Temp files (uploads, reports, test outputs)
+temp_*
+*.xlsx
+*.xls
+*.csv
+*.json
+*.txt
+*.pdf
+
+# Streamlit cache
+.streamlit/
+
+# Uvicorn / FastAPI reload files
+*.pid
+
+# Redis / Pinecone configs (later integration)
+*.rdb
+dump.rdb
+appendonly.aof
+redis.conf
+pinecone_config.json
